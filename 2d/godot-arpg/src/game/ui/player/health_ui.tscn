@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0mpkfsw5vdi4"]
+
+[ext_resource type="Script" path="res://src/game/ui/player/health_ui.gd" id="1_65mro"]
+
+[node name="HealthUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 66.0
+offset_bottom = 20.0
+script = ExtResource("1_65mro")
+
+[node name="Health" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 27.0
+scale = Vector2(0.3, 0.3)
+show_percentage = false
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 39.0
+text = "0"

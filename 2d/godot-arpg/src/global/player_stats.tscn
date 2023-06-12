@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4yjer6bsnasl"]
+
+[ext_resource type="PackedScene" uid="uid://wr0dypbevcxe" path="res://src/global/stats.tscn" id="1_2v3rk"]
+
+[node name="PlayerStats" instance=ExtResource("1_2v3rk")]
+max_bat_num = 20000

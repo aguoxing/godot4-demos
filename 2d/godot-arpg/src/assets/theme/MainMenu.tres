@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dcre6gw5uopos"]
+
+[ext_resource type="FontFile" uid="uid://dp7auw07gt8qt" path="res://src/assets/font/ipix_12px.ttf" id="1_6t06h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cy2mt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5m00i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uenc1"]
+
+[resource]
+default_font = ExtResource("1_6t06h")
+default_font_size = 12
+Button/colors/font_hover_color = Color(0.470588, 0.470588, 0.470588, 1)
+Button/fonts/font = ExtResource("1_6t06h")
+Button/styles/hover = SubResource("StyleBoxEmpty_cy2mt")
+Button/styles/normal = SubResource("StyleBoxEmpty_5m00i")
+Button/styles/pressed = SubResource("StyleBoxEmpty_uenc1")

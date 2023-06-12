@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvm1yub6vitio"]
+
+[ext_resource type="Script" path="res://src/game/ui/menu/tab_container.gd" id="1_qyhjt"]
+
+[node name="TabContainer" type="TabContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -64.0
+offset_right = 136.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyhjt")
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 2
+
+[node name="TabBar2" type="TabBar" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="TabBar3" type="TabBar" parent="."]
+visible = false
+layout_mode = 2

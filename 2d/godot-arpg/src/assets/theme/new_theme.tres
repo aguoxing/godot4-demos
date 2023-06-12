@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dmtjf0ylgy1dq"]
+
+[ext_resource type="FontFile" uid="uid://dp7auw07gt8qt" path="res://src/assets/font/ipix_12px.ttf" id="1_67c37"]
+
+[resource]
+default_font = ExtResource("1_67c37")
+default_font_size = 12

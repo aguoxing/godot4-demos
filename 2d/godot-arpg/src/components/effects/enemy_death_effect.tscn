@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=3 uid="uid://b0ttrq86dj63q"]
+
+[ext_resource type="Texture2D" uid="uid://d3v1qpao58mxv" path="res://src/assets/2D/Effects/EnemyDeathEffect.png" id="1_cpmxq"]
+[ext_resource type="Script" path="res://src/components/effects/effect.gd" id="2_ppcyt"]
+[ext_resource type="AudioStream" uid="uid://bv0h32hrflry8" path="res://src/assets/audio/sounds/EnemyDie.wav" id="3_ki5o2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11fa8"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyhm2"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw8bw"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqquo"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqedp"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvur4"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5pcw"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d482s"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ugqs"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mifsd"]
+atlas = ExtResource("1_cpmxq")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vy844"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11fa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyhm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw8bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqquo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqedp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvur4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5pcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d482s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ugqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mifsd")
+}],
+"loop": false,
+"name": &"animate",
+"speed": 15.0
+}]
+
+[node name="EnemyDeathEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vy844")
+animation = &"animate"
+offset = Vector2(0, -8)
+script = ExtResource("2_ppcyt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ki5o2")
+autoplay = true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3l5rkxr2n7g8"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_yrymv"]
+[ext_resource type="Texture2D" uid="uid://y7ct8pat50s5" path="res://Assets/Tiles/mini.png" id="2_1kpju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4ewp"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_yrymv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1kpju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p4ewp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true

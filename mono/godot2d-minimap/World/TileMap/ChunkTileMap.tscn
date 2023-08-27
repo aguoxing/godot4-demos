@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6bo6fj0gylnu"]
+
+[ext_resource type="TileSet" uid="uid://c6ou6q5gqyr54" path="res://Resources/noise.tres" id="1_0tp7c"]
+[ext_resource type="Script" path="res://Scripts/World/TileMap/ChunkTileMap.cs" id="2_rxmtg"]
+
+[node name="ChunkTileMap" type="TileMap"]
+tile_set = ExtResource("1_0tp7c")
+format = 2
+script = ExtResource("2_rxmtg")

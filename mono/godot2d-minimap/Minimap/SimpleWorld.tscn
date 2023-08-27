@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgrp1dhjfl6g6"]
+
+[ext_resource type="Script" path="res://Scripts/Minimap/SimpleWorld.cs" id="1_yuwm0"]
+[ext_resource type="TileSet" uid="uid://yu1l5oxwnp1b" path="res://Resources/map.tres" id="2_4edou"]
+[ext_resource type="Script" path="res://Scripts/World/TileMap/IsaacTileMap.cs" id="3_b3swh"]
+[ext_resource type="PackedScene" uid="uid://b0nb7voecrhvp" path="res://Minimap/SimplePlayer.tscn" id="3_dh1y7"]
+
+[node name="SimpleWorld" type="Node2D"]
+script = ExtResource("1_yuwm0")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_4edou")
+format = 2
+script = ExtResource("3_b3swh")
+
+[node name="SimplePlayer" parent="." instance=ExtResource("3_dh1y7")]

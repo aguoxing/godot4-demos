@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://eybmgd1bw406"]
+
+[ext_resource type="Script" path="res://Scripts/Minimap/Minimap.cs" id="1_mwcbr"]
+
+[node name="Minimap" type="Control"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 340.0
+offset_bottom = 340.0
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_mwcbr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 360.0
+color = Color(0.627451, 1, 1, 0.67451)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 340.0
+offset_bottom = 340.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(320, 320)
+render_target_update_mode = 4

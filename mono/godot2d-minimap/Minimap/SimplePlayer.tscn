@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0nb7voecrhvp"]
+
+[ext_resource type="Texture2D" uid="uid://y7ct8pat50s5" path="res://Assets/Tiles/mini.png" id="1_6iyf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qma0"]
+size = Vector2(16, 16)
+
+[node name="SimplePlayer" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6iyf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7qma0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)

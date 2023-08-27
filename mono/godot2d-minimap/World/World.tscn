@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://di1bp05ytkuic"]
+
+[ext_resource type="TileSet" uid="uid://yu1l5oxwnp1b" path="res://Resources/map.tres" id="1_hypiv"]
+[ext_resource type="Script" path="res://Scripts/World/World.cs" id="1_tdx40"]
+[ext_resource type="PackedScene" uid="uid://eybmgd1bw406" path="res://Minimap/Minimap.tscn" id="2_scyc2"]
+[ext_resource type="Script" path="res://Scripts/World/TileMap/OpenWorldTileMap.cs" id="3_6wdak"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_tdx40")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_hypiv")
+format = 2
+script = ExtResource("3_6wdak")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="UI"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "重新生成"
+
+[node name="Minimap" parent="UI" instance=ExtResource("2_scyc2")]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 8.0
+offset_right = 208.0
+offset_bottom = 368.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="UI/Button" to="." method="InitMap"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0cqxggn8nius"]
+
+[ext_resource type="Script" path="res://Scripts/World.cs" id="1_8q7mm"]
+[ext_resource type="PackedScene" uid="uid://sk4cx0wye60w" path="res://Scenes/FlowField.tscn" id="1_ms1mx"]
+[ext_resource type="Script" path="res://Scripts/Enemies.cs" id="3_sjssc"]
+[ext_resource type="PackedScene" uid="uid://dnt0tyhs0wd3i" path="res://Scenes/Player.tscn" id="4_1bvwc"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_8q7mm")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="OptionButton" type="OptionButton" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 24.0
+offset_right = -29.0
+offset_bottom = 55.0
+grow_horizontal = 0
+item_count = 2
+selected = 0
+popup/item_0/text = "添加墙"
+popup/item_0/id = 0
+popup/item_1/text = "添加敌人"
+popup/item_1/id = 1
+
+[node name="FlowField" parent="." instance=ExtResource("1_ms1mx")]
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("3_sjssc")
+
+[node name="Player" parent="." instance=ExtResource("4_1bvwc")]
+visible = false
+position = Vector2(584, 368)
+
+[connection signal="item_selected" from="UI/OptionButton" to="." method="_optionChange"]

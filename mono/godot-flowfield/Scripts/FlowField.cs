@@ -4,8 +4,6 @@ using System.Collections.Generic;
 public partial class FlowField : TileMap
 {
     private Lines _lines;
-    private int _width = 1280;
-    private int _height = 720;
     private int _tileSize = 16;
     private int _rows;
     private int _cols;
@@ -20,8 +18,9 @@ public partial class FlowField : TileMap
     public override void _Ready()
     {
         _lines = GetNode<Lines>("Lines");
-        _rows = _height / _tileSize;
-        _cols = _width / _tileSize;
+        Rect2I rect = GetUsedRect();
+        _rows = rect.Size.Y;
+        _cols = rect.Size.X;
     }
 
     public override void _Process(double delta)

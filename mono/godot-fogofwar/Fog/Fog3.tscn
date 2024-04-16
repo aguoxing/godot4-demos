@@ -1,0 +1,11 @@
+﻿[gd_scene load_steps=3 format=3 uid="uid://bmxielp3ln"]
+
+[ext_resource type="Script" path="res://Scripts/Fog3.cs" id="1_8oulh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1q45e"]
+blend_mode = 3
+
+[node name="Fog3" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_1q45e")
+centered = false
+script = ExtResource("1_8oulh")

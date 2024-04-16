@@ -1,0 +1,26 @@
+﻿[gd_scene load_steps=5 format=3 uid="uid://6ws6xvcp7ar0"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_5ai3s"]
+[ext_resource type="Texture2D" uid="uid://caeeq7mpa6ne" path="res://Assets/Tiles/mini.png" id="1_t0hnf"]
+[ext_resource type="Texture2D" uid="uid://dygh4behboiyy" path="res://Assets/Effects/light.png" id="3_3g0m0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hplq"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5ai3s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t0hnf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1hplq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.6
+shadow_enabled = true
+texture = ExtResource("3_3g0m0")
+texture_scale = 0.2

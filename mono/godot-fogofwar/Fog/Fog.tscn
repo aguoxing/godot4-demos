@@ -1,0 +1,44 @@
+﻿[gd_scene load_steps=5 format=3 uid="uid://ke8ik1vnbxjc"]
+
+[ext_resource type="Script" path="res://Scripts/Fog.cs" id="1_ak83x"]
+
+[sub_resource type="Shader" id="Shader_sxfs3"]
+code = "shader_type canvas_item;
+
+uniform sampler2D last_texture;
+uniform sampler2D clear_texture;
+uniform vec2 clear_position;
+uniform vec2 clear_size;
+
+void fragment() {
+	vec4 clr = texture(last_texture, UV);
+	clr.rgb /= clr.a;
+	if ((UV.x >= clear_position.x) && 
+	    (UV.x <  clear_position.x + clear_size.x) && 
+	    (UV.y >= clear_position.y) && 
+	    (UV.y <  clear_position.y + clear_size.y)) 
+	{
+		float x1 = (UV.x - clear_position.x) / clear_size.x;
+		float y1 = (UV.y - clear_position.y) / clear_size.y;
+		vec4 clr_clear = texture(clear_texture, vec2(x1, y1));
+		if (clr_clear.a >= 0.99)
+		{
+			clr.a = min(clr_clear.r, clr.a);
+		}
+	}
+	COLOR = clr;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kra0e"]
+shader = SubResource("Shader_sxfs3")
+shader_parameter/clear_position = null
+shader_parameter/clear_size = null
+
+[sub_resource type="ImageTexture" id="ImageTexture_tbk0c"]
+
+[node name="Fog" type="Sprite2D"]
+material = SubResource("ShaderMaterial_kra0e")
+texture = SubResource("ImageTexture_tbk0c")
+centered = false
+script = ExtResource("1_ak83x")
+_fogColor = Color(0, 0, 0, 1)

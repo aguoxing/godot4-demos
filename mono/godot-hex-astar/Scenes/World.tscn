@@ -1,0 +1,17 @@
+﻿[gd_scene load_steps=5 format=3 uid="uid://m0hft5cr5y2"]
+
+[ext_resource type="Script" path="res://Scripts/World.cs" id="1_vaddb"]
+[ext_resource type="PackedScene" uid="uid://dw65w5g2l2yu4" path="res://Scenes/PointyHexMap.tscn" id="2_0i1fp"]
+[ext_resource type="PackedScene" uid="uid://duflt85vsnn11" path="res://Player/Player.tscn" id="2_7jgf6"]
+[ext_resource type="Script" path="res://Scripts/DrawPath.cs" id="2_fexfo"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_vaddb")
+
+[node name="PointyHexMap" parent="." instance=ExtResource("2_0i1fp")]
+
+[node name="Player" parent="." instance=ExtResource("2_7jgf6")]
+position = Vector2(445, 277)
+
+[node name="DrawPath" type="Node2D" parent="."]
+script = ExtResource("2_fexfo")
